@@ -256,6 +256,9 @@ class LLM:
             try:
                 # --- 1) Format messages according to provider requirements
                 formatted_messages = self._format_messages_for_provider(messages)
+                logging.warning("*** LLM Prompt Begin ***")
+                logging.warning(messages)
+                logging.warning("*** LLM Prompt End ***")
 
                 # --- 2) Prepare the parameters for the completion call
                 params = {
