@@ -292,6 +292,11 @@ class LLM:
 
                 # --- 2) Make the completion call
                 response = litellm.completion(**params)
+
+                logging.warning("*** LLM Response Begin ***")
+                logging.warning(messages)
+                logging.warning("*** LLM Response End ***")
+
                 response_message = cast(Choices, cast(ModelResponse, response).choices)[
                     0
                 ].message
