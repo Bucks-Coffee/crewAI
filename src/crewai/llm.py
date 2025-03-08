@@ -256,9 +256,9 @@ class LLM:
             try:
                 # --- 1) Format messages according to provider requirements
                 formatted_messages = self._format_messages_for_provider(messages)
-                logging.warning("\n*** LLM Prompt Begin ***\n")
-                logging.warning(messages)
-                logging.warning("\n*** LLM Prompt End ***\n")
+                #logging.warning("\n*** LLM Prompt Begin ***\n")
+                #logging.warning(messages)
+                #logging.warning("\n*** LLM Prompt End ***\n")
 
                 # --- 2) Prepare the parameters for the completion call
                 params = {
@@ -293,9 +293,9 @@ class LLM:
                 # --- 2) Make the completion call
                 response = litellm.completion(**params)
 
-                logging.warning("\n*** LLM Response Begin ***\n")
-                logging.warning(response)
-                logging.warning("\n*** LLM Response End ***\n")
+                #logging.warning("\n*** LLM Response Begin ***\n")
+                #logging.warning(response)
+                #logging.warning("\n*** LLM Response End ***\n")
 
                 response_message = cast(Choices, cast(ModelResponse, response).choices)[
                     0
